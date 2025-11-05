@@ -1,0 +1,27 @@
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  build: {
+    outDir: 'vite-dist',
+    emptyOutDir: true,
+    rollupOptions: {
+      input: './src/index.js',
+      output: {
+        manualChunks: (id) => {
+          // Extract large vendors into a separate chunk.
+          if (id.match(/[\\/]node_modules[\\/]echarts(.*)/)) {
+            return 'echarts'
+          }
+          if (id.match(/[\\/]node_modules[\\/]element-plus(.*)/)) {
+            return 'element-plus'
+          }
+          // Extract common vendors into a separate chunk.
+          if (id.match(/[\\/]node_modules[\\/]/)) {
+            return 'vendor'
+          }
+          return null
+        },
+      },
+    },
+  }
+})
