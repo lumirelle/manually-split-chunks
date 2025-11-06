@@ -1,13 +1,34 @@
+import { VueLoaderPlugin } from 'vue-loader'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+
 /**
  * @type {import('webpack').Configuration}
  */
 export default {
-  entry: './src/index.js',
+  entry: './src/main.js',
   output: {
-    filename: '[name]-[fullhash].js',
+    filename: '[name]-[contenthash:8].js',
     clean: true,
     path: import.meta.dirname + '/webpack-dist',
   },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      }
+    ],
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+        template: './public/index.html'
+    })
+  ],
   optimization: {
     splitChunks: {
       /**

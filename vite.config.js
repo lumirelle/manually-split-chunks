@@ -1,11 +1,15 @@
 import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
+  plugins: [
+    vue(),
+  ],
   build: {
     outDir: 'vite-dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: './src/index.js',
+      input: './src/main.js',
       output: {
         manualChunks: (id) => {
           // Extract large vendors into a separate chunk.
