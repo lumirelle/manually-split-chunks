@@ -9,7 +9,6 @@ export default defineConfig({
     outDir: 'vite-dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: './src/main.js',
       output: {
         manualChunks: (id) => {
           // Extract large vendors into a separate chunk.

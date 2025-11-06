@@ -1,3 +1,4 @@
+// This is the entry file for the Webpack project
 import { foo } from './modules/module.js'
 import { foo as foo2 } from './modules/module-2.js'
 import { createApp } from 'vue'

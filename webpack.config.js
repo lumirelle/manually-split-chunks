@@ -26,7 +26,7 @@ export default {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-        template: './public/index.html'
+        template: './template.html'
     })
   ],
   optimization: {
