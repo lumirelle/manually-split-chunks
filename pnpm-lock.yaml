@@ -33,9 +33,12 @@ importers:
       html-webpack-plugin:
         specifier: ^5.6.4
         version: 5.6.4(webpack@5.102.1)
-      style-loader:
-        specifier: ^4.0.0
-        version: 4.0.0(webpack@5.102.1)
+      mini-css-extract-plugin:
+        specifier: ^2.9.4
+        version: 2.9.4(webpack@5.102.1)
+      terser-webpack-plugin:
+        specifier: ^5.3.14
+        version: 5.3.14(webpack@5.102.1)
       vite:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@24.10.0)(jiti@2.6.1)(terser@5.44.1)
@@ -920,6 +923,12 @@ packages:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
 
+  mini-css-extract-plugin@2.9.4:
+    resolution: {integrity: sha512-ZWYT7ln73Hptxqxk2DxPU9MmapXRhxkJD6tkSR04dnQxm8BGu2hzgKLugK5yySD97u/8yy7Ma7E76k9ZdvtjkQ==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -1095,12 +1104,6 @@ packages:
   strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
-
-  style-loader@4.0.0:
-    resolution: {integrity: sha512-1V4WqhhZZgjVAVJyt7TdDPZoPBPNHbekX4fWnCJL1yQukhCeZhJySUL+gL9y6sNdN95uEOS83Y55SqHcP7MzLA==}
-    engines: {node: '>= 18.12.0'}
-    peerDependencies:
-      webpack: ^5.27.0
 
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
@@ -2088,6 +2091,12 @@ snapshots:
     dependencies:
       mime-db: 1.52.0
 
+  mini-css-extract-plugin@2.9.4(webpack@5.102.1):
+    dependencies:
+      schema-utils: 4.3.3
+      tapable: 2.3.0
+      webpack: 5.102.1(webpack-cli@6.0.1)
+
   nanoid@3.3.11: {}
 
   neo-async@2.6.2: {}
@@ -2275,10 +2284,6 @@ snapshots:
   strip-ansi@6.0.1:
     dependencies:
       ansi-regex: 5.0.1
-
-  style-loader@4.0.0(webpack@5.102.1):
-    dependencies:
-      webpack: 5.102.1(webpack-cli@6.0.1)
 
   supports-color@7.2.0:
     dependencies:

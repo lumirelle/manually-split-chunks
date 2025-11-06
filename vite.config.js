@@ -7,6 +7,7 @@ export default defineConfig({
   ],
   build: {
     outDir: 'vite-dist',
+    assetsDir: '.',
     emptyOutDir: true,
     rollupOptions: {
       output: {
